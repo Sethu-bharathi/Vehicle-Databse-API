@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const vehicleSchema = new mongoose.Schema({
   License: String,
   Owner_name: String,
-  Car_color: String,
-  Car_type:String,
-  Car_company:String,
+  vehicle_color: String,
+  vehicle_type:String,
+  vehicle_company:String,
 });
 
 

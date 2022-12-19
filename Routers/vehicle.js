@@ -1,5 +1,8 @@
 
 const router=require("express").Router();
-const {getVehicle} =require("../Controllers/vehicle.js")
-router.get("/",getVehicle);
-router.post("/")
+const {getVehicle,addVehicle} =require("../Controllers/vehicle.js")
+
+router.get("/:license",getVehicle);
+router.post("/",addVehicle);
+
+module.exports=router

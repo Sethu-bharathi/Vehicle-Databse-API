@@ -1,0 +1,28 @@
+# GET http://localhost:3000/vehicle/TN39Y5680
+
+# POST http://localhost:3000/query/
+# Content-Type:application/json
+
+# {   "License": "TN39Y5681",
+#     "time_stamp":"19/12/2022, 8:00:22 pm",
+#     "Location":[2234,30.089678567]
+# }
+
+# POST http://localhost:3000/query/queryplate
+# Content-Type:application/json
+
+# {   "License": "TN39Y5680"
+# }
+
+# POST http://localhost:3000/query/querylat
+# Content-Type:application/json
+
+# {   "Location":[2234,30.089678567]
+# }
+
+# POST http://localhost:3000/query/querydate
+# Content-Type:application/json
+
+# {   "Date":"19/12/2022"
+# }
+GET http://localhost:3000/query/ HTTP/1.1
