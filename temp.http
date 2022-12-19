@@ -25,4 +25,12 @@
 
 # {   "Date":"19/12/2022"
 # }
-GET http://localhost:3000/query/ HTTP/1.1
+# GET http://localhost:3000/query/ HTTP/1.1
+
+POST http://localhost:3000/query/querydateAndLat
+Content-Type:application/json
+
+{   "Date":"19/12/2022",
+    "Location":[2234,30.089678567]
+    
+}
