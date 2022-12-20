@@ -3,13 +3,16 @@ const Vehicle = require("../Models/vehicle.js");
 
 exports.addQueryVehicle = async (req, res) => {
   const vehicle = req.body;
+  console.log(vehicle);
   const vehicledb = new queryVehicle({
     License: vehicle.License,
     time_stamp: vehicle.time_stamp,
     Date: vehicle.time_stamp.split(",")[0],
     Time: vehicle.time_stamp.split(",")[1].trimStart(),
     Location: vehicle.Location,
+    InDatabase:vehicle.InDatabase
   });
+
   const details = await vehicledb.save();
   res.json({
     message: "Added succcessfully",

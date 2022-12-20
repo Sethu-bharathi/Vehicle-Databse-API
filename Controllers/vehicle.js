@@ -2,7 +2,15 @@ const Vehicle=require("../Models/vehicle.js");
 
 exports.getVehicle=async (req,res)=>{
     const vehicle=req.params;
+    if(vehicle.license=="all"){
+        res.json({
+            message: "Found the car",
+            data:await Vehicle.find({})
+          });
+          return;
+    }
     const isvehicle = await Vehicle.findOne({ License: vehicle.license});
+
     if(isvehicle){
         res.json({
             message: "Found the car",
