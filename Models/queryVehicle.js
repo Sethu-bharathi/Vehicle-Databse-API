@@ -6,7 +6,11 @@ const queryVehicleSchema = new mongoose.Schema({
   Date: String,
   Time: String,
   Location: Array,
-  InDatabase: Boolean
+  InDatabase: Boolean,
+  Color:String,
+  Type:String,
+  Company:String,
+  Owner:String
 });
 
 module.exports = mongoose.model("queryVehicle", queryVehicleSchema);

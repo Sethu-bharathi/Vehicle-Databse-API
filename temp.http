@@ -1,10 +1,16 @@
 #To retreive from vehicle db
 # GET http://localhost:3000/vehicle/TN39Y5680
-GET http://localhost:3000/vehicle/all
+# GET http://localhost:3000/vehicle/all
 
 #To add in query database
 # POST http://localhost:3000/query/
 # Content-Type:application/json
+
+# {"License": "TN39Y5681", 
+# "time_stamp": "20/12/2022, 08:46:28 pm", 
+# "Location": [11.0176, 76.9674],
+#  "InDatabase": 1
+#  }
 
 # {   "License": "TN39Y5681",
 #     "time_stamp":"19/12/2022, 8:00:22 pm",
@@ -39,3 +45,11 @@ GET http://localhost:3000/vehicle/all
 #     "Location":[2234,30.089678567]
     
 # }
+
+#To query anything
+POST http://localhost:3000/query/queryAny
+Content-Type:application/json
+
+{  "Color":"brown",
+    "Type":"Convertible"
+}

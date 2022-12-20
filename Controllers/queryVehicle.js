@@ -4,13 +4,18 @@ const Vehicle = require("../Models/vehicle.js");
 exports.addQueryVehicle = async (req, res) => {
   const vehicle = req.body;
   console.log(vehicle);
+  const isvehicle=await Vehicle.findOne({License:vehicle.License});
   const vehicledb = new queryVehicle({
     License: vehicle.License,
     time_stamp: vehicle.time_stamp,
     Date: vehicle.time_stamp.split(",")[0],
     Time: vehicle.time_stamp.split(",")[1].trimStart(),
     Location: vehicle.Location,
-    InDatabase:vehicle.InDatabase
+    InDatabase: vehicle.InDatabase,
+    Color:isvehicle?isvehicle.vehicle_color:"Not Found 🤧",
+    Type:isvehicle?isvehicle.vehicle_type:"Not Found 🤧",
+    Company:isvehicle?isvehicle.vehicle_company:"Not Found 🤧",
+    Owner:isvehicle?isvehicle.owner:"Not Found 🤧"
   });
 
   const details = await vehicledb.save();
@@ -73,3 +78,13 @@ exports.getAll = async (req, res) => {
     data: isvehicle,
   });
 };
+
+exports.queryAll=async(req,res)=>{
+  const vehicle = req.body;
+  const isvehicle = await queryVehicle.find(vehicle);
+  console.log(isvehicle);
+  res.json({
+    message: "Found succcessfully",
+    data: isvehicle,
+  });
+}

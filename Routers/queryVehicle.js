@@ -1,4 +1,4 @@
-const { addQueryVehicle,plateQuery,latQuery,dateQuery,getAll,dateAndLat } = require("../Controllers/queryVehicle");
+const { addQueryVehicle,plateQuery,latQuery,dateQuery,getAll,dateAndLat,queryAll } = require("../Controllers/queryVehicle");
 
 const router=require("express").Router();
 
@@ -8,4 +8,5 @@ router.post("/querylat",latQuery);
 router.post("/querydate",dateQuery);
 router.get("/",getAll);
 router.post("/querydateAndLat",dateAndLat);
+router.post("/queryAny",queryAll)
 module.exports=router
